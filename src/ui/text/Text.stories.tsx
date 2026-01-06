@@ -10,6 +10,12 @@ export default meta;
 type Story = StoryObj<typeof Text>;
 
 export const SelectStory: Story = {
+	args: {
+		children: {},
+		as: 'h2',
+		dynamic: true,
+	},
+
 	argTypes: {
 		as: {
 			options: ['h1', 'h2', 'div', 'span'],
@@ -48,6 +54,7 @@ export const SelectStory: Story = {
 			control: { type: 'select' },
 		},
 	},
+
 	render: (args) => {
 		return (
 			<Text {...args}>
