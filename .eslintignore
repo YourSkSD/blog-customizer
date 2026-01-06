@@ -6,3 +6,7 @@ build
 dist
 webpack/*.js
 package*.json
+.storybook/
+src/**/*.stories.ts
+src/**/*.stories.tsx
+src/ui/story-decorator/
