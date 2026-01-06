@@ -9,6 +9,7 @@ import {
 	backgroundColors,
 	contentWidthArr,
 	ArticleStateType,
+	OptionType,
 } from 'src/constants/articleProps';
 import styles from './ArticleParamsForm.module.scss';
 import clsx from 'clsx';
@@ -57,7 +58,7 @@ export const ArticleParamsForm = ({ articleState, onApply }: Props) => {
 		onApply(defaultArticleState);
 	};
 
-	const handleChange = (key: keyof ArticleStateType, value: any) => {
+	const handleChange = (key: keyof ArticleStateType, value: OptionType) => {
 		setDraftState((prev) => ({
 			...prev,
 			[key]: value,
@@ -86,7 +87,7 @@ export const ArticleParamsForm = ({ articleState, onApply }: Props) => {
 							onChange={(opt) => handleChange('fontFamilyOption', opt)}
 						/>
 						<RadioGroup
-							name=''
+							name='fontSize'
 							title='Размер шрифта'
 							options={fontSizeOptions}
 							selected={draftState.fontSizeOption}
