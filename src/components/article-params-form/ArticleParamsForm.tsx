@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react';
 import {
 	defaultArticleState,
 	fontFamilyOptions,
+	fontSizeOptions,
 } from 'src/constants/articleProps';
 import styles from './ArticleParamsForm.module.scss';
 import clsx from 'clsx';
 import { Select } from 'src/ui/select';
+import { RadioGroup } from 'src/ui/radio-group';
 
 type Props = {
 	articleState: typeof defaultArticleState;
@@ -46,6 +48,18 @@ export const ArticleParamsForm = ({ articleState, onApply }: Props) => {
 							setDraftState((prev) => ({
 								...prev,
 								fontFamilyOption: option,
+							}))
+						}
+					/>
+					<RadioGroup
+						title='Размер шрифта'
+						name='fontSize'
+						options={fontSizeOptions}
+						selected={draftState.fontSizeOption}
+						onChange={(option) =>
+							setDraftState((prev) => ({
+								...prev,
+								fontSizeOption: option,
 							}))
 						}
 					/>
